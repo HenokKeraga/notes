@@ -1,0 +1,38 @@
+Answer  
+public class Container<T> {
+    private T obj;
+
+    public Container(T obj) {
+        this.obj = obj;
+    }
+
+    public T getObj() {
+        return obj;
+    }
+
+    public String toString() {
+        return String.valueOf(obj);
+    }
+
+}
+
+Answer 
+
+   public static <E> E[] findDuplicate(E[] array) {
+        Set<E> set = new HashSet<>();
+        List<E> list= new ArrayList<>();
+
+        for(E item:array){
+            if(!set.contains(item)){
+                set.add(item);
+
+            }else {
+                list.add(item);
+            }
+
+        }
+
+        E[] newArray = Arrays.copyOf(array, 1);
+
+        return list.toArray(newArray);
+    }
