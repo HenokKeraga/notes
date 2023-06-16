@@ -42,3 +42,23 @@ Answer
 
         return list.toArray(newArray);
     }
+Answer
+  /*
+     Implement a generic method called getMax that takes an array of elements and returns the maximum element from the array.
+     The method should work with arrays of any type that implements the Comparable interface. Write the method signature
+     and provide an implementation for it.
+    **/
+    public static <E extends Comparable<E>> E getMax(E[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array must not be empty or null");
+        }
+
+        E max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i].compareTo(max) > 0) {
+                max = array[i];
+            }
+        }
+
+        return max;
+    }
