@@ -18,7 +18,13 @@ public class Container<T> {
 
 Answer 
 
-   public static <E> E[] findDuplicate(E[] array) {
+ /*
+     *  Implement a generic method called findDuplicates that takes an array of elements of any type and returns a new array containing
+     *  only the duplicate elements. The returned array should maintain the order of appearance in the original array.
+     * Write the method signature and provide an implementation for it.
+     * */
+
+    public static <E> E[] findDuplicate(E[] array) {
         Set<E> set = new HashSet<>();
         List<E> list= new ArrayList<>();
 
