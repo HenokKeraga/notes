@@ -1,0 +1,124 @@
+/**Write a function that takes an array of numbers as input and returns the sum of all the numbers. */
+
+const sum = function ([...a]) {
+  let total = 0;
+  for (let n of a) {
+    total += n;
+  }
+
+  return total;
+};
+
+const arr = [3, 4, 2];
+
+console.log(sum(arr));
+/**Write a function that takes an array of strings as input and returns a new array with only the strings that have a length greater than 5. */
+
+const gt5 = (arr) => {
+  let result = [];
+  for (let ele of arr) {
+    if (ele.length > 5) {
+      result.push(ele);
+    }
+  }
+  return result;
+};
+
+const stArray = ["aklsdjf", "ad", "aldsfaksdf", "a"];
+
+console.log(gt5(stArray));
+/**Write a function that takes an array of numbers as input and returns the average (mean) of all the numbers. */
+
+const mean = (arr) => {
+  let sum = 0;
+
+  for (const b of arr) {
+    sum += b;
+  }
+  const m = sum / arr.length;
+
+  return m;
+};
+const arr1 = [1, 2, 3, 4, 5];
+
+console.log(mean(arr1));
+/**Write a function that takes two arrays as input and returns a new array containing the unique elements from both arrays. */
+
+const uniquef = (aarr, barr) => {
+  let result = [];
+
+  for (const a of aarr) {
+    if (!result.includes(a)) {
+      result.push(a);
+    }
+  }
+
+  for (const b of barr) {
+    if (!result.includes(b)) {
+      result.push(b);
+    }
+  }
+
+  return result;
+};
+
+console.log(uniquef(arr, arr1));
+
+const uniqueSet = (aarr, barr) => {
+  let set = new Set([...aarr, ...barr]);
+  let a = Array.from(set);
+  return a;
+};
+console.log(uniqueSet(arr, arr1));
+
+/**Write a function that takes an array of objects (each object has a name and age property)
+ * and returns a new array with only the names of the objects sorted alphabetically. */
+
+const fu2 = (arr) => {
+  return arr.map((a) => a["name"]).sort((n1, n2) => n2.localeCompare(n1));
+};
+const arr3 = [
+  { name: "henok", age: 12 },
+  { name: "woin", age: 32 },
+];
+
+console.log(fu2(arr3));
+
+/**Write a function that takes an array of strings as input and returns a new array with the unique characters present in all the strings */
+const arr4 = ["aaaabbb", "bbddd", "werert"];
+
+const unch = (arr) => {
+  const ts = arr.join("");
+
+  const ar = [...ts];
+
+  const se = new Set(ar);
+
+  const nar = [...se];
+
+  return nar;
+};
+
+console.log(unch(arr4));
+
+/***Write a function that takes an array of numbers as input and returns a new array with the numbers sorted in ascending order,
+ *  with even numbers appearing before odd numbers. */
+
+const fune = (arr) => {
+  const even = [];
+  const odd = [];
+
+  arr.sort((n1, n2) => n1 - n2);
+
+  for (let a of arr) {
+    if (a % 2 === 0) {
+      even.push(a);
+    } else {
+      odd.push(a);
+    }
+  }
+
+  return even.concat(odd)
+};
+
+console.log(fune([6,2,7,1,8,9]))
