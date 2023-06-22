@@ -122,3 +122,59 @@ const fune = (arr) => {
 };
 
 console.log(fune([6,2,7,1,8,9]))
+
+/**
+Given a string, convert it to title case (first letter of each word capitalized, rest lowercase).
+Given a string, find the longest word in it.
+Given a string, replace all occurrences of a specific substring with another substring.
+Given a string, check if it is a valid email address.
+Given a string, remove all the whitespace characters from it.
+Given a string, check if it contains only numeric characters.
+Given a sentence, find the most frequently occurring word in it.
+Given a string, check if it is a valid URL.
+Given a string, count the number of occurrences of a specific character in it.
+Given a string, find the second most frequent character in it.
+Given a sentence, find the word with the maximum number of vowels.
+Given a string, check if it is a valid password (meets specific criteria, e.g., minimum length, contains uppercase letters, etc.).
+Given a string, remove all the duplicate characters from it.
+Given a string, reverse the order of characters in it.
+Given a sentence, find the shortest word in it. */
+
+/**Given a string, count the number of vowels present in it. */
+const str = "aasldjfasldfj";
+const vA = ["a", "e", "i", "o", "u"];
+let count = 0;
+for (let i = 0; i < str.length; i++) {
+  if (vA.includes(str.charAt(i))) {
+    count++;
+  }
+}
+console.log(count);
+/**Given a sentence, reverse the order of words in it. */
+const str1 = "ajfalsdflj";
+const arr = str1.split("");
+arr.reverse();
+const stn = arr.join("");
+console.log(stn);
+/**Given a string, check if it is a palindrome (reads the same forwards and backwards). */
+const str2 = "abba";
+const st = str2.split("").reverse().join("");
+if (str2 === st) {
+  console.log("the string is palindrome");
+} else {
+  console.log("the string is not paliddrome");
+}
+/** Given a string, remove all the punctuation marks from it.*/
+
+const str4 = "ajdsaj!";
+const stc = str4.split("");
+const rs4 = stc.filter((s) => !(s === "!")).join("");
+
+console.log(rs4);
+/**Given a sentence, capitalize the first letter of each word. */
+const str5 ='aaljdfl adsfadsf adsfjads ldlka'
+const rs5=str5.split(" ")
+const arrr = rs5.map(s=> s.charAt(0).toUpperCase()+s.slice(1))
+const output = arrr.join(' ')
+console.log(output)
+
