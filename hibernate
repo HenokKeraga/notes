@@ -1,0 +1,96 @@
+*******
+1. how to configure Hibernate using XML configuration?
+
+  
+  <?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="my-persistence-unit" transaction-type="RESOURCE_LOCAL">
+        <description>description</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>Car</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/product"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="password"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
+
+  import jakarta.persistence.*;
+
+public class Main {
+    public static void main(String[] args) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit");
+
+        EntityManager em = emf.createEntityManager();
+        try (emf; em) {
+
+            em.getTransaction().begin();
+
+            Car car = new Car();
+
+            car.setId(2);
+            car.setBrand("dasfsdf");
+            car.setName("yasdfasd");
+
+            em.persist(car);
+
+            em.getTransaction().commit();
+        }
+
+
+    }
+}
+
+@Entity
+@Table(name = "car")
+class Car {
+    @Id
+    @Column(name = "id")
+    private int id;
+    @Column(name = "brand")
+    private String brand;
+    @Column(name = "name")
+    private String name;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+*****
+2. How to configure Hibernate using Java annotations?
+
+
+
