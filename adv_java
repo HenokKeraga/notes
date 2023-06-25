@@ -1,0 +1,82 @@
+
+
+import java.sql.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/product";
+        String username = "root";
+        String password = "password";
+        ;
+
+        try (Connection connection = DriverManager.getConnection(url, username, password);
+//             Statement statement = connection.createStatement();
+             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO car values (?,?,?)");
+             //  statement.executeUpdate("INSERT INTO car VALUES (4,'asjdfalds','gggggg')");
+
+        ) {
+
+
+            preparedStatement.setInt(1, 12);
+            preparedStatement.setString(2, "66666");
+            preparedStatement.setString(3, "7777777");
+            preparedStatement.executeUpdate();
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT id,brand,name from car where id=12");
+            while (rs.next()) {
+                Car car = new Car();
+                car.setId(rs.getInt("id"));
+                car.setBrand(rs.getString("brand"));
+                car.setName(rs.getString("name"));
+                System.out.println(car);
+
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+    }
+}
+
+class Car {
+    private int id;
+    private String brand;
+    private String name;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
+}
