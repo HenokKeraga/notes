@@ -10,11 +10,11 @@ services:
       - "59013-59014:59013-59014"
 
     environment:
-      - MASTER_PASSWORD=donutHole101
+      - MASTER_PASSWORD=12345
     command:
        - --agree-to-sap-license
        - --dont-check-system
        - --dont-check-mount-points
        - --master-password
-       - donutHole101
+       - 12345
 
