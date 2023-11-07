@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  hana-express:
+    image: "saplabs/hanaexpress:2.00.061.00.20220519.1"
+    ports:
+      - "39013:39013"
+      - "39017:39017"
+      - "39041-39045:39041-39045"
+      - "1128-1129:1128-1129"
+      - "59013-59014:59013-59014"
+
+    environment:
+      - MASTER_PASSWORD=donutHole101
+    command:
+       - --agree-to-sap-license
+       - --dont-check-system
+       - --dont-check-mount-points
+       - --master-password
+       - donutHole101
+
