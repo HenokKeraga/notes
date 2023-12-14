@@ -361,7 +361,8 @@ export class BetterHighlightDirective implements OnInit {
 
 #### @HostListener
 
-* Needs to be imported from @angular/core
+* @HostListener  -> decorator in Angular is used to listen for events on the host element of the directive.
+*  Needs to be imported from @angular/core
 * This let's you listen to events from the Element
 * Convenient way of listening to events, can be used with custom events
 ```
