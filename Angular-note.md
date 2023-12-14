@@ -289,29 +289,23 @@ the child component (recipe-item) will receive the [recipe] data. In it's TS you
 * Modify the appearance or behavior of individual DOM elements.
 * Applied as attributes in HTML.
 * Attribute directives sit on elements just like attributes
- ### Structural Directives:
+* Look like a normal HTML Attribute, possibly with databinding or event binding
+* Only affect/change the element they are added to
+### Structural Directives:
 
 * Change the structure of the DOM by adding or removing elements.
 * Use the * syntax in HTML.
 * Structural directives do the same, but they also change the structure around the element. It can remove elements from the DOM altogether
-
-### Attribute directives
-
-* Look like a normal HTML Attribute, possibly with databinding or event binding
-* Only affect/change the element they are added to
-
-### Structural Directives
-
 * Look like a normal HTML Attribute but havbe a leading *
 * Affect a whole area in the DOM, elements get added/removed
 
-### ngFor / ngIf
+#### ngFor / ngIf (structural Directive)
 
 * When looping with ngFor, you can use the item on any element that's nested within the element that has ngFor
 * You can only have one structural attribute per element
 * `*ngIf="onlyOdd"` onlyOdd returns true/false, with this you can filter elements based on data
 
-### ngClass / ngStyle
+#### ngClass / ngStyle (Attribute Directive) 
 
 * `[ngClass]="{odd: odd % 2 !== 0}"` Here you assign the class odd to the element if the number is odd
 * `[ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}"` here you give the element a background color of yellow if the number is odd, otherwise transparent
