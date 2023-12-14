@@ -280,20 +280,19 @@ the child component (recipe-item) will receive the [recipe] data. In it's TS you
 
 ###  type of Directive 
 * three types
-** Component Directives:
+### Component Directives:
 
-***Components in Angular are directives with templates.
-***They create reusable UI elements.
-**Attribute Directives:
+* Components in Angular are directives with templates.
+* They create reusable UI elements.
+### Attribute Directives:
 
-***Modify the appearance or behavior of individual DOM elements.
-***Applied as attributes in HTML.
- **Structural Directives:
-
-***Change the structure of the DOM by adding or removing elements.
-*** Use the * syntax in HTML.
-
+* Modify the appearance or behavior of individual DOM elements.
+* Applied as attributes in HTML.
 * Attribute directives sit on elements just like attributes
+ ### Structural Directives:
+
+* Change the structure of the DOM by adding or removing elements.
+* Use the * syntax in HTML.
 * Structural directives do the same, but they also change the structure around the element. It can remove elements from the DOM altogether
 
 ### Attribute directives
