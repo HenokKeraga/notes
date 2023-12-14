@@ -278,6 +278,21 @@ the child component (recipe-item) will receive the [recipe] data. In it's TS you
 
 ## Section 7: Directives Deep Dive
 
+###  type of Directive 
+* three types
+** Component Directives:
+
+***Components in Angular are directives with templates.
+***They create reusable UI elements.
+**Attribute Directives:
+
+***Modify the appearance or behavior of individual DOM elements.
+***Applied as attributes in HTML.
+ **Structural Directives:
+
+***Change the structure of the DOM by adding or removing elements.
+*** Use the * syntax in HTML.
+
 * Attribute directives sit on elements just like attributes
 * Structural directives do the same, but they also change the structure around the element. It can remove elements from the DOM altogether
 
@@ -377,7 +392,8 @@ export class BetterHighlightDirective implements OnInit {
 
 #### @HostBinding
 
-* With @HostBinding you can define to which property(eg: style) of the host element(the element that carries the directive) you want to bind
+* @HostBinding ->decorator in Angular is used to bind a property of the host element (the element to which the directive is attached) directly to a property in the directive or component. 
+*  With @HostBinding you can define to which property(eg: style) of the host element(the element that carries the directive) you want to bind
 * `@HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';`, Here we're asking Angular to access the style(bg color) of the element that has the directive, and we set it equal to the background color defined
 
 #### Binding to directive properties
