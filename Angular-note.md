@@ -613,6 +613,7 @@ ngOnInit() {
 * Routes are app-wide, so it's a good idea to set them in the app.module.ts
 * `import { Routes, RouterModule } from '@angular/router';` needs to be imported
 * Also add RouterModule to the imports array `RouterModule.forRoot(appRoutes)` forRoot lets Angular know what const you're using for your routes and to use them
+* In Angular, routing can be configured in two main ways: programmatic routing and template-driven routing
 * Routing setup:
 ```
 const appRoutes: Routes = [
